@@ -145,15 +145,15 @@ h1 {
     transition: transform 0.5s ease-in-out;
 }
 
-.carta.formulario-abierto {
+.carta.abierta {
     position: relative;
     top: 0;
     bottom: auto;
     height: auto;
-    min-height: 100%;
+    min-height: 260px;
 }
 
-.carta.formulario-abierto .contenido {
+.carta.abierta .contenido {
     height: auto;
     overflow: visible;
 }
@@ -198,7 +198,13 @@ h1 {
 
 .abierto .invitacion::before {
   transform: rotateX(180deg);
+  opacity: 0;
   z-index: 0;
+}
+
+.invitacion:has(.carta.abierta) {
+  height: auto;
+  min-height: 260px;
 }
 .carta.mostrar-carta {
  transform: translateY(-370px);
@@ -285,13 +291,21 @@ h1 {
   font-size: 16px;
 }
 
+.fila-campos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
 .label-username {
   display: flex;
   flex-direction: column;
   gap: 4px;
   text-align: left;
-  width: 100%;
-  max-width: 260px;
+  flex: 1 1 160px;
+  max-width: 200px;
 }
 
 .input-username,
