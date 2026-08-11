@@ -1,3 +1,4 @@
+
 const envoltura = document.querySelector(".envoltura");
 const carta = document.querySelector(".carta");
 
