@@ -6,28 +6,33 @@
 }
 
 :root {
-    --primario: #ceccd1;
-    --fondo: #eaf6ff;
-    --fondo-sobre: #fffbfe;
-    --solapa-sobre: #ddd9b3;
-    --cuerpo-sobre: #ccc47d;
-    --sombra: rgba(120, 90, 170, 0.25);
-    --texto: #3b2a52;
+    --primario: #dccb96;
+    --fondo: #7ec0ee;
+    --fondo-sobre: #c8a165;
+    --solapa-sobre: #5d9c3b;
+    --cuerpo-sobre: #6d4c25;
+    --sombra: rgba(35, 25, 10, 0.4);
+    --texto: #2b1d0e;
 }
 body {
   background: var(--fondo);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Marck Script", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 30px;
 }
 
 h1 {
-    font-family: "Marck Script", serif;
-    font-size: 60px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 32px;
+    line-height: 1.5;
     text-align: center;
     margin-bottom: 50px;
     color: var(--texto);
@@ -41,7 +46,7 @@ h1 {
     position: relative;
     background-color: var(--fondo-sobre);
     box-shadow: 0 10px 40px var(--sombra);
-    border-radius: 15px;
+    border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     transition: box-shadow 0.3s ease;
 }
@@ -68,11 +73,11 @@ h1 {
     border-left: 250px solid transparent;
     transform-origin: top;
     transition: all 0.5s ease-in-out 0.7s;
-    border-radius: 10px;
+    border-radius: 6px;
     filter: drop-shadow(0 4px 6px var(--sombra));
 }
 .invitacion::after {
-    content: "✦";
+    content: "⛏";
     position: absolute;
     top: 78px;
     left: 50%;
@@ -85,7 +90,8 @@ h1 {
     background: var(--cuerpo-sobre);
     color: #fff;
     font-size: 20px;
-    border-radius: 50%;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 10px var(--sombra);
     z-index: 5;
     transition: opacity 0.4s ease;
@@ -102,9 +108,9 @@ h1 {
     height: 100%;
     background-color: var(--cuerpo-sobre);
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
     filter: brightness(1.04);
 }
 .solizq {
@@ -115,9 +121,9 @@ h1 {
     height: 100%;
     background-color: var(--cuerpo-sobre);
     clip-path: polygon(0 0, 0 100%, 100% 100%);
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     filter: brightness(0.92);
 }
 
@@ -130,7 +136,7 @@ h1 {
     text-align: center;
     box-shadow: 0 0 5PX var(--sombra);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 6px;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -151,7 +157,7 @@ h1 {
   font-size: 16px;
   border: 2px solid var(--cuerpo-sobre);
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 18px;
   height: 100%;
   line-height: 1.7;
@@ -166,17 +172,19 @@ h1 {
 }
 
 .contenido > strong:first-child {
-  font-family: "Marck Script", serif;
-  font-size: 26px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+  line-height: 1.6;
   font-weight: 400;
   color: var(--texto);
 }
 
 .contenido code {
-  font-family: "Marck Script", serif;
-  font-size: 22px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 13px;
+  line-height: 1.6;
   font-style: normal;
-  color: var(--texto);
+  color: var(--cuerpo-sobre);
   background: none;
 }
 
@@ -229,33 +237,35 @@ h1 {
 .btn-no,
 .btn-aceptar,
 .btn-confirmar-no {
-  font-family: "Marck Script", serif;
-  font-size: 24px;
-  background: linear-gradient(135deg, var(--cuerpo-sobre), var(--solapa-sobre));
+  font-family: "Press Start 2P", cursive;
+  font-size: 13px;
+  background: var(--solapa-sobre);
   color: #fff;
   border: none;
-  border-radius: 30px;
-  padding: 10px 30px;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  padding: 12px 22px;
   cursor: pointer;
   box-shadow: 0 6px 16px var(--sombra);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .btn-si:hover,
 .btn-no:hover,
 .btn-aceptar:hover,
 .btn-confirmar-no:hover {
-  transform: translateY(-3px) scale(1.04);
+  transform: translateY(-3px);
   box-shadow: 0 10px 22px var(--sombra);
-  background: linear-gradient(135deg, var(--solapa-sobre), var(--cuerpo-sobre));
-  color: var(--texto);
+  background: var(--cuerpo-sobre);
+  color: #fff;
 }
 
 .btn-si:active,
 .btn-no:active,
 .btn-aceptar:active,
 .btn-confirmar-no:active {
-  transform: translateY(0) scale(0.96);
+  transform: translateY(2px);
+  border-bottom-width: 2px;
 }
 
 .confirmacion {
