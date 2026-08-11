@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", cursive;
   font-size: 30px;
   padding: 40px 16px;
   overflow-x: hidden;
@@ -146,6 +146,9 @@ h1 {
 }
 
 .carta.formulario-abierto {
+    position: relative;
+    top: 0;
+    bottom: auto;
     height: auto;
     min-height: 100%;
 }
@@ -156,16 +159,16 @@ h1 {
 }
 
 .contenido {
-  font-family: "Poppins", Calibri, sans-serif;
+  font-family: "Press Start 2P", cursive;
   color: var(--texto);
   text-align: center;
-  font-size: 16px;
+  font-size: 11px;
   border: 2px solid var(--cuerpo-sobre);
   background: rgba(255, 255, 255, 0.4);
   border-radius: 6px;
   padding: 18px;
   height: 100%;
-  line-height: 1.7;
+  line-height: 1.9;
   cursor: pointer;
   overflow: scroll;
 }
@@ -294,9 +297,9 @@ h1 {
 .input-username,
 .input-nombre,
 .input-nombre-no {
-  font-family: "Poppins", Calibri, sans-serif;
-  font-size: 15px;
-  padding: 8px 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+  padding: 10px 10px;
   border-radius: 8px;
   border: 1px solid var(--cuerpo-sobre);
   color: var(--texto);
