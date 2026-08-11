@@ -1,0 +1,307 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --primario: #ceccd1;
+    --fondo: #eaf6ff;
+    --fondo-sobre: #fffbfe;
+    --solapa-sobre: #ddd9b3;
+    --cuerpo-sobre: #ccc47d;
+    --sombra: rgba(120, 90, 170, 0.25);
+    --texto: #3b2a52;
+}
+body {
+  background: var(--fondo);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Marck Script", serif;
+  font-size: 30px;
+}
+
+h1 {
+    font-family: "Marck Script", serif;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--texto);
+    text-shadow: 3px 3px 0 var(--solapa-sobre);
+}
+
+.contenedor {
+    width: 500px;
+}
+.envoltura {
+    position: relative;
+    background-color: var(--fondo-sobre);
+    box-shadow: 0 10px 40px var(--sombra);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: box-shadow 0.3s ease;
+}
+
+.envoltura:hover {
+    box-shadow: 0 16px 48px var(--sombra);
+}
+
+.invitacion {
+    position: relative;
+    width: 500px;
+    height: 350px;
+}
+
+.invitacion::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:4;
+    border-top: 200px solid var(--solapa-sobre);
+    border-right: 250px solid transparent;
+    border-left: 250px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 6px var(--sombra));
+}
+.invitacion::after {
+    content: "✦";
+    position: absolute;
+    top: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cuerpo-sobre);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px var(--sombra);
+    z-index: 5;
+    transition: opacity 0.4s ease;
+}
+.abierto .invitacion::after {
+    opacity: 0;
+    pointer-events: none;
+}
+.solder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cuerpo-sobre);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    filter: brightness(1.04);
+}
+.solizq {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cuerpo-sobre);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    filter: brightness(0.92);
+}
+
+.carta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primario);
+    text-align: center;
+    box-shadow: 0 0 5PX var(--sombra);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carta.formulario-abierto {
+    height: auto;
+    min-height: 100%;
+}
+
+.carta.formulario-abierto .contenido {
+    height: auto;
+    overflow: visible;
+}
+
+.contenido {
+  font-family: "Poppins", Calibri, sans-serif;
+  color: var(--texto);
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid var(--cuerpo-sobre);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 18px;
+  height: 100%;
+  line-height: 1.7;
+  cursor: pointer;
+  overflow: scroll;
+}
+
+.contenido strong,
+.contenido p {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.contenido > strong:first-child {
+  font-family: "Marck Script", serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--texto);
+}
+
+.contenido code {
+  font-family: "Marck Script", serif;
+  font-size: 22px;
+  font-style: normal;
+  color: var(--texto);
+  background: none;
+}
+
+.abierto .invitacion::before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+.carta.mostrar-carta {
+ transform: translateY(-290px);
+ transition: transform .5s ease-in-out;
+}
+.carta.cerrando-carta {
+  transform: translateY(-290px);
+  transition: transform .5s ease-in-out;
+}
+
+.carta.abierta {
+  z-index: 10000;
+}
+
+.envoltura.desactivar-envoltura .invitacion::before{
+  pointer-events: none;
+}
+
+@media screen and (max-width: 400px) {
+  .contenedor{
+    width: 300px;
+  }
+  .invitacion{
+    width: 300px;
+    height: 250px;
+  }
+  .invitacion::before{
+    border-top: 150px solid var(--solapa-sobre);
+    border-right: 150px  solid transparent;
+    border-left: 150px solid transparent;
+  }
+
+}
+
+.respuesta {
+  text-align: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-si,
+.btn-no,
+.btn-aceptar,
+.btn-confirmar-no {
+  font-family: "Marck Script", serif;
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--cuerpo-sobre), var(--solapa-sobre));
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px var(--sombra);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-si:hover,
+.btn-no:hover,
+.btn-aceptar:hover,
+.btn-confirmar-no:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 22px var(--sombra);
+  background: linear-gradient(135deg, var(--solapa-sobre), var(--cuerpo-sobre));
+  color: var(--texto);
+}
+
+.btn-si:active,
+.btn-no:active,
+.btn-aceptar:active,
+.btn-confirmar-no:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.confirmacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.label-username {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  width: 100%;
+  max-width: 260px;
+}
+
+.input-username,
+.input-nombre,
+.input-nombre-no {
+  font-family: "Poppins", Calibri, sans-serif;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--cuerpo-sobre);
+  color: var(--texto);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-username:focus,
+.input-nombre:focus,
+.input-nombre-no:focus {
+  outline: none;
+  border-color: var(--solapa-sobre);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.rechazo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+}
