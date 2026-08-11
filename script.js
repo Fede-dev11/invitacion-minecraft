@@ -83,7 +83,7 @@ btnAceptar.addEventListener("click", async (e) => {
     return;
   }
 
-  await enviarMensajeDiscord(`✅ ¡Acepté la invitación! Soy **${nombre}** y mi Usuario de Minecraft: **${username}**. Nos vemos el martes 11 de agosto a las 7:00 PM 🎉`);
+  await enviarMensajeDiscord(`✅ ¡Acepté la invitación! Soy **${nombre}** y mi Usuario de Minecraft: **${username}**. Nos vemos el martes o miercoles agosto a las 7:00 o 8:00 PM 🎉`);
   window.location.href = invitacionDiscord;
 });
 
