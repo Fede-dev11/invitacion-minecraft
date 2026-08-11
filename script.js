@@ -40,7 +40,7 @@ const btnAceptar = document.querySelector(".btn-aceptar");
 const rechazo = document.querySelector(".rechazo");
 const btnConfirmarNo = document.querySelector(".btn-confirmar-no");
 const invitacionDiscord = "https://discord.gg/jvFtMcezP";
-const proxyDiscord = "https://invitacion-poxy.fernandoprogra.workers.dev/";
+const proxyDiscord = "https://invitacion-poxy.fernandoprogra.workers.dev";
 
 function enviarMensajeDiscord(mensaje) {
   return fetch(proxyDiscord, {
